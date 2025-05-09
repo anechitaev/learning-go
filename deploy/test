@@ -1,0 +1,15 @@
+[Unit]
+Description=Universal Proxy (CONNECT + SOCKS5)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/universal-proxy
+Restart=always
+RestartSec=5s
+User=proxyuser
+Group=proxyuser
+Environment=LISTEN_ADDR=0.0.0.0:1080
+
+[Install]
+WantedBy=multi-user.target
